@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+
+.closeBtn{
+    position:absolute;
+    right:0px;
+    top:0px;
+    margin:5px;
+    padding: 0px;
+    height:15px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sizeBtn{
+    width: 99px;
+    height:35px;
+    @include border;
+    margin:7px 15px 0px 0px;
+}

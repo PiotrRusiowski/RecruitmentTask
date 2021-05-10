@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/global.css" />
+  </head>
+
+  <body>
+    <h1 class="btn">Jestem</h1>
+
+    <button class="togglePopupBtn">show pop-up</button>
+    <div class="popup">
+      <div class="popup__content">
+        <button class="togglePopupBtn closeBtn">X</button>
+        <h1 class="productName--mobile">konsola microsoft xbox</h1>
+
+        <div class="popup__wrapper1"></div>
+        <div class="popup__wrapper2">
+          <form class="popup__form">
+            <h1 class="productName--desktop">konsola microsoft xbox</h1>
+            <h2 class="productPrice">125zł</h2>
+            <div class="popup__sizesSection">
+              <span class="popup__sizesLabel">rozmiar:</span>
+              <button class="sizeBtn">ram 32px</button>
+              <button class="sizeBtn">ram 32px</button>
+              <button class="sizeBtn">ram 32px</button>
+            </div>
+            <div class="popup__colorSection">
+              <span class="colorLabel">wariant:</span>
+              <select class="colorSelect" name="" id="">
+                <option  name="test" value="">black</option>
+                <option  name="test" value="">black</option>
+                <option value="">black</option>
+              </select>
+            </div>
+            <div class="popup__productInfoWrapper">
+              <div class="popup__productInfoWraperContainer">
+                <i class="infoIcon">icon</i>
+                <div class="status">Produkt dostępny</div>
+              </div>
+              <div class="popup__productInfoWraperContainer">
+                <i class="infoIcon">icon</i>
+                <div class="status">
+                  Możemy wysłać już dzisiaj<br />
+                  <span>Sprawdź czas i koszty wysyłki</span>
+                </div>
+              </div>
+            </div>
+            <div class="popup__buySection">
+              <div class="amountOrderWrapper">
+                <button class="amountBtn">+</button>
+                <div class="amountOrder">2</div>
+                <button class="amountBtn">-</button>
+              </div>
+              <button class="buyBtn">Dodaj do koszka</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>

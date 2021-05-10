@@ -1,0 +1,131 @@
+@import "./variables.scss";
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;}
+   
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color:$text;
+}    
+button{
+    
+    cursor:pointer;
+    background-color: transparent;
+    border:none;
+}
+
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width:100%;
+    background-color: rgba($grey,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    // opacity:0;
+    // visibility: hidden;
+    opacity:1;
+    visibility:visible;
+    transition: 0.3s;
+ 
+    &__content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        @include border;
+        box-shadow: 0rem 5px 10px rgba($grey,0.8);
+        height: 100%;
+        width: 100%;
+    }
+    &__wrapper1{
+        width: 100%;
+        height:30%;
+        background-color: cadetblue;
+    }
+ 
+    &__sizesSection{
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+    &__sizesLabel{
+    width: 100%;}
+
+
+    &__colorSection{
+        display: flex;
+        flex-direction: column;
+
+    }
+    &__buySection{
+    display: flex;
+    }
+    &__productInfoWrapper{
+     display: flex;
+     font-size: 13px;
+ 
+    }
+    &__productInfoWraperContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.amountOrderWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:140px;
+    height:50px;
+}
+
+
+
+.showPopup{
+    opacity:1;
+    visibility: visible;
+}
+
+
+
+@media(min-width:$moblieL){
+.productName--mobile{display:none;}
+.productName--desktop{display: block;}
+.popup{
+ 
+    &__content{
+        width:745px;
+        height:384px;
+        flex-direction: row;
+    }
+    &__wrapper1{
+        width:350px;
+        height:100%;
+    }
+
+}
+
+
+}
+@media(max-width:$moblieL){
+    .productName--mobile{display:block;}
+    .productName--desktop{display: none;}
+ 
+    .sizeBtn{
+        width: 99px;
+        height:35px;
+        border:1px solid black;
+        margin-right: px;
+    }
+  
+    }
