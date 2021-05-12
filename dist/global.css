@@ -69,6 +69,10 @@ button {
   opacity: 1;
   visibility: visible; }
 
+.slider__img {
+  width: 200px;
+  height: 200px; }
+
 @media (min-width: 425px) {
   .productName--mobile {
     display: none; }

@@ -26,29 +26,39 @@ const sizesButtons = document.querySelectorAll(".sizeBtn");
 const colorSelectOptions = document.querySelectorAll("option");
 const productPrice = document.querySelector(".productPrice");
 const popup = document.querySelector(".popup");
+const popupForm = document.querySelector(".popup__form");
+const status = document.querySelector(".status");
 
 const togglePopup = () => {
   popup.classList.toggle("showPopup");
 };
 toggleBtns.forEach((btn) => btn.addEventListener("click", togglePopup));
 
-fetch("./xbox.json")
-  .then((res) => res.json())
-  .then((jsonData) => {
-    sizesButtons.forEach((sizeBtn, index) => {
-      const arrayOfSizes = Object.values(jsonData.sizes.items);
+let data;
 
-      sizeBtn.innerText = arrayOfSizes[index].name;
-      productPrice.innerText = arrayOfSizes[0].price;
-      console.log(arrayOfSizes);
+let arrayOfSizes;
 
-      // arrayOfSizes.forEach((size) => {
-      //   sizeBtn.innerText = size.name;
-      // });
-    });
+const getData = () => {
+  fetch("./xbox.json")
+    .then((res) => res.json())
+    .then((res) => (data = res))
+    .then(() => console.log(data))
+    .then(() => setData(data));
+};
+
+const setData = (data) => {
+  console.log(data, "Data");
+  sizesButtons.forEach((sizeBtn, index) => {
+    arrayOfSizes = Object.values(data.sizes.items);
+
+    sizeBtn.innerText = arrayOfSizes[index].name;
+    status.innerText = arrayOfSizes[0].status;
+    sizeBtn.addEventListener("click", () => changeRamOption(sizeBtn.innerText));
+    productPrice.innerText = `${arrayOfSizes[0].price} zł`;
+    console.log(arrayOfSizes);
 
     colorSelectOptions.forEach((option, index) => {
-      const arrayOfVariants = Object.values(jsonData.multiversions[0].items);
+      const arrayOfVariants = Object.values(data.multiversions[0].items);
       console.log(arrayOfVariants);
 
       const arrayOfColors = arrayOfVariants.map((variant, index) =>
@@ -64,10 +74,26 @@ fetch("./xbox.json")
       console.log(formattedColors);
 
       option.innerText = formattedColors[index].name;
-
-      // option.innerText = arrayOfVariants[index].n
     });
   });
+};
+
+getData();
+
+const changeRamOption = (typeOfRam) => {
+  arrayOfSizes.forEach((item) => {
+    if (item.name === typeOfRam) {
+      productPrice.innerText = `${item.price} zł`;
+      status.innerText = item.status;
+    }
+  });
+};
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+};
+
+popupForm.addEventListener("submit", handleFormSubmit);
 
 })();
 
