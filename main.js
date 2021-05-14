@@ -24,7 +24,12 @@ const getData = () => {
 };
 
 const setData = (data) => {
-  console.log(data, "Data");
+  // console.log(data);
+  // let oneSize = data.sizes.items;
+  // console.log(oneSize);
+  // const sizeArray = Object.values(data.sizes.items);
+  // console.log(sizeArray);
+
   sizesButtons.forEach((sizeBtn, index) => {
     arrayOfSizes = Object.values(data.sizes.items);
 
@@ -32,7 +37,7 @@ const setData = (data) => {
     status.innerText = arrayOfSizes[0].status;
     sizeBtn.addEventListener("click", () => changeRamOption(sizeBtn.innerText));
     productPrice.innerText = `${arrayOfSizes[0].price} zł`;
-    console.log(arrayOfSizes);
+    console.log("array", arrayOfSizes);
 
     colorSelectOptions.forEach((option, index) => {
       const arrayOfVariants = Object.values(data.multiversions[0].items);
