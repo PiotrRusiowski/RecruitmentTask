@@ -28,37 +28,39 @@ const productPrice = document.querySelector(".productPrice");
 const popup = document.querySelector(".popup");
 const popupForm = document.querySelector(".popup__form");
 const status = document.querySelector(".status");
+const slider = document.querySelector(".slider__content");
+const sliderArrowLeft = document.querySelector(".slider__arrow");
+const sliderArrowRight = document.querySelector(".slider__arrow--right");
+const productName = document.querySelectorAll(".productName");
+let data;
+let arrayOfSizes;
+let cart = [];
 
 const togglePopup = () => {
   popup.classList.toggle("showPopup");
 };
 toggleBtns.forEach((btn) => btn.addEventListener("click", togglePopup));
 
-let data;
-
-let arrayOfSizes;
+const isLocalStorageSupported = window.localStorage; //
 
 const getData = () => {
   fetch("./xbox.json")
     .then((res) => res.json())
     .then((res) => (data = res))
-    .then(() => console.log(data))
-    .then(() => setData(data));
+    .then(() => setData(data))
+    .then(() => localStorage.setItem("data", JSON.stringify(data)));
 };
 
 const setData = (data) => {
-  // console.log(data);
-  // let oneSize = data.sizes.items;
-  // console.log(oneSize);
-  // const sizeArray = Object.values(data.sizes.items);
-  // console.log(sizeArray);
-
+  productName.forEach((name) => (name.innerText = data.product.name));
   sizesButtons.forEach((sizeBtn, index) => {
     arrayOfSizes = Object.values(data.sizes.items);
 
-    sizeBtn.innerText = arrayOfSizes[index].name;
+    sizeBtn.value = arrayOfSizes[index].name;
+
     status.innerText = arrayOfSizes[0].status;
-    sizeBtn.addEventListener("click", () => changeRamOption(sizeBtn.innerText));
+
+    sizeBtn.addEventListener("click", () => changeRamOption(sizeBtn.value));
     productPrice.innerText = `${arrayOfSizes[0].price} zł`;
     console.log("array", arrayOfSizes);
 
@@ -76,28 +78,73 @@ const setData = (data) => {
         return newObj;
       });
 
-      console.log(formattedColors);
-
       option.innerText = formattedColors[index].name;
+      option.value = formattedColors[index].name;
     });
   });
 };
-
-getData();
 
 const changeRamOption = (typeOfRam) => {
   arrayOfSizes.forEach((item) => {
     if (item.name === typeOfRam) {
       productPrice.innerText = `${item.price} zł`;
       status.innerText = item.status;
+
+      sizesButtons.forEach((button) => {
+        if (button.name === typeOfRam) {
+          button.classList.add("active");
+        } else {
+          button.classList.remove("active");
+        }
+      });
     }
   });
 };
 
+try {
+  const cachedData = localStorage.getItem("data");
+  const data = JSON.parse(cachedData);
+
+  if (data) {
+    setData(data);
+  } else {
+    throw new Error("NO_CACHE");
+  }
+} catch (e) {
+  getData();
+}
+
 const handleFormSubmit = (e) => {
   e.preventDefault();
+  // bez name za to z buttonami
+  console.log(e.target.colorSelect.value);
+
+  const activeBtn = document.querySelector(".active");
+
+  console.log(activeBtn.value);
+
+  const productToAddToCart = {
+    typeOfRam: activeBtn.value,
+    color: e.target.colorSelect.value,
+  };
+
+  cart = [...cart, productToAddToCart];
+  alert("Product added to the cart!, Check console for details :) ");
+  console.log(cart);
 };
 
+const onNextClick = () => {
+  const imgWidth = slider.offsetWidth;
+  slider.scrollLeft += imgWidth;
+};
+
+const onPreviousClick = () => {
+  const imgWidth = slider.offsetWidth;
+  slider.scrollLeft -= imgWidth;
+};
+
+sliderArrowLeft.addEventListener("click", onNextClick);
+sliderArrowRight.addEventListener("click", onPreviousClick);
 popupForm.addEventListener("submit", handleFormSubmit);
 
 })();

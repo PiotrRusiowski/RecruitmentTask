@@ -9,40 +9,53 @@
   </head>
 
   <body>
-    <h1 class="btn">Jestem</h1>
 
     <button class="togglePopupBtn">show pop-up</button>
     <div class="popup">
       <div class="popup__content">
         <button class="togglePopupBtn closeBtn">X</button>
-        <h1 class="productName--mobile">konsola microsoft xbox</h1>
+        <h1 class="productName productName--mobile"></h1>
 
         <div class="popup__wrapper1">
-          <img src="./assets/images/xbox.png" alt="xbox" class="slider__img">
-          <!-- <div class="slider"></div> -->
+          <div class="slider">
+            <button class="slider__arrow slider__arrow--left">
+              <img src="./assets/icons/chevron-right-4.svg" alt="">
+            </button>
+            <button class="slider__arrow slider__arrow--right">
+              <img src="/assets/icons/chevron-right-4.svg" alt="">
+            </button>
+            <div class="slider__content">
+           
+              <img class="sliderImg" src="./assets/images/xbox.png" alt="">
+              <img class="sliderImg" src="./assets/images/pol_il_Playstation-1.png" alt="">
+              <img class="sliderImg" src="./assets//images/NoPath — kopia (2).png" alt="">
+             
+            </div>
+          </div>
+
         </div>
         <div class="popup__wrapper2">
           <form class="popup__form">
-            <h1 class="productName--desktop">konsola microsoft xbox</h1>
-            <h2 class="productPrice">125zł</h2>
+            <h1 class="productName productName--desktop"></h1>
+            <h2 class="productPrice"></h2>
             <div class="popup__sizesSection">
-              <span class="popup__sizesLabel">rozmiar:</span>
-              <button class="sizeBtn">ram 32px</button>
-              <button class="sizeBtn">ram 32px</button>
-              <button class="sizeBtn">ram 32px</button>
+              <label class="popup__sizesLabel" for="colorSelect">rozmiar:</label>
+              <input type="button" name="Ram 32 GB" class="sizeBtn active"/>
+              <input type="button" name="Ram 64 GB" class="sizeBtn" />
+              <input type="button" name="Ram 128 GB" class="sizeBtn" />
             </div>
             <div class="popup__colorSection">
-              <span class="colorLabel">wariant:</span>
-              <select class="colorSelect" name="" id="">
-                <option  name="test" value="">black</option>
-                <option  name="test" value="">black</option>
-                <option value="">black</option>
+              <label class=" " for="colorSelect">wariant:</label>
+              <select class="colorSelect" name="colorSelect" id="">
+                <option  name="colorVariant1" value=""></option>
+                <option  name="colorVariant2" value=""></option>
+                <option name="colorVariant3" value=""></option>
               </select>
             </div>
             <div class="popup__productInfoWrapper">
               <div class="popup__productInfoWraperContainer">
                 <i class="infoIcon">icon</i>
-                <div class="status"></div>
+                <div class="status" name="status"></div>
               </div>
               <div class="popup__productInfoWraperContainer">
                 <i class="infoIcon">icon</i>
@@ -55,10 +68,10 @@
             <div class="popup__buySection">
               <div class="amountOrderWrapper">
                 <button class="amountBtn">+</button>
-                <div class="amountOrder">2</div>
+                <div class="amountCounter">1</div>
                 <button class="amountBtn">-</button>
               </div>
-              <button class="buyBtn">Dodaj do koszka</button>
+              <button class="buyBtn" type="submit">Dodaj do koszka</button>
             </div>
           </form>
         </div>

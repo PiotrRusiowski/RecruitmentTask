@@ -1,9 +1,16 @@
 $blue:#0090F6;
 $text:#333333;
 $grey:#C3C7C8;
-$borderGrey:#707070; 
-$moblieL:"425px";
+$borderGrey:#707070;
+$mobileL:"425px";
+
 @mixin border {
-    border:1px solid $grey;
-    border-radius: 5px;   
+    border: 1px solid $grey;
+    border-radius: 5px;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
