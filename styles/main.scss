@@ -21,18 +21,18 @@ button {
 .productName {
   font-size: 16px;
   font-weight: bold;
-  width: 315px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .productPrice {
   margin-bottom: 5px;
   height: 25px;
   font-size: 16px;
+  color: $blue;
 }
 
 .colorSelect {
-  height: 35px
+  height: 35px;
 }
 
 .popup {
@@ -61,6 +61,7 @@ button {
     box-shadow: 0rem 5px 10px rgba($grey, 0.8);
     width: 100%;
     overflow-y: auto;
+    padding: 10px;
 
   }
 
@@ -72,7 +73,7 @@ button {
   &__sizesSection {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+
 
   }
 
@@ -83,37 +84,48 @@ button {
   &__colorSection {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
 
 
   &__productInfoWrapper {
     display: flex;
+    flex-direction: column;
     font-size: 13px;
-    margin-bottom: 20px;
-    height: 31px;
+    margin-bottom: 10px;
+    width: 100%;
+
   }
 
   &__productInfoWraperContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
+
   }
 
   &__buySection {
     display: flex;
+    justify-content: space-between;
 
 
   }
+}
+
+.infoIcon {
+  width: 15px;
+  height: 11px;
 }
 
 .amountOrderWrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 140px;
+  width: 49%;
   height: 50px;
+  @include border;
+  font-size: 14px;
 }
 
 .showPopup {
@@ -128,16 +140,22 @@ button {
 
 label {
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
+}
+
+.status {
+  margin-left: 11px;
 }
 
 @media (min-width: $mobileL) {
-  .productName--mobile {
-    display: none;
+  .productName {
+    margin-right: 70px;
   }
 
-  .productName--desktop {
-    display: block;
+  .amountOrderWrapper {
+
+    width: 140px;
+
   }
 
   .popup {
@@ -145,6 +163,7 @@ label {
       width: 745px;
       height: 384px;
       flex-direction: row;
+      padding: 0px;
     }
 
     &__wrapper1 {
@@ -154,28 +173,50 @@ label {
     }
 
     &__wrapper2 {
-      padding: 20px 20px 20px 0px
+      padding: 24px 20px 20px 0px
+    }
+
+    &__productInfoWrapper {
+      font-size: 12px;
+      flex-direction: row;
+      height: 31px;
+      width: 100%;
+
+    }
+
+    &__productInfoWraperContainer {
+      &--left {
+        width: 35%;
+        margin-right: 26px
+      }
+
+      &--right {}
+
+    }
+
+    &__sizesSection {
+      margin-bottom: 20px;
+    }
+
+
+
+    &__colorSection {
+
+      margin-bottom: 16px;
     }
   }
 }
 
-@media (max-width: $mobileL) {
-  .productName--mobile {
-    display: block;
-  }
+.active {
+  border: 2px solid $blue !important
+}
 
-  .productName--desktop {
-    display: none;
-  }
+@media (max-width: $mobileL) {
 
   .sizeBtn {
     width: 99px;
     height: 35px;
     border: 1px solid black;
-    margin-right: px;
+    margin-right: 5px;
   }
-}
-
-.active {
-  border: 2px solid lightblue !important
 }
