@@ -1,14 +1,14 @@
 const toggleBtns = document.querySelectorAll(".togglePopupBtn");
-const sizesButtons = document.querySelectorAll(".sizeBtn");
+const sizesButtons = document.querySelectorAll(".btn--sizeBtn");
 const colorSelectOptions = document.querySelectorAll("option");
-const productPrice = document.querySelector(".productPrice");
+const productPrice = document.querySelector(".popup__title--price");
 const popup = document.querySelector(".popup");
 const popupForm = document.querySelector(".popup__form");
 const status = document.querySelector(".status");
 const slider = document.querySelector(".slider__content");
 const sliderArrowLeft = document.querySelector(".slider__arrow");
 const sliderArrowRight = document.querySelector(".slider__arrow--right");
-const productName = document.querySelectorAll(".productName");
+const productName = document.querySelector(".popup__title--name");
 let data;
 let arrayOfSizes;
 let cart = [];
@@ -29,7 +29,7 @@ const getData = () => {
 };
 
 const setData = (data) => {
-  productName.forEach((name) => (name.innerText = data.product.name));
+  productName.innerText = data.product.name;
   sizesButtons.forEach((sizeBtn, index) => {
     arrayOfSizes = Object.values(data.sizes.items);
 
@@ -69,9 +69,9 @@ const changeRamOption = (typeOfRam) => {
 
       sizesButtons.forEach((button) => {
         if (button.name === typeOfRam) {
-          button.classList.add("active");
+          button.classList.add("btn--active");
         } else {
-          button.classList.remove("active");
+          button.classList.remove("btn--active");
         }
       });
     }
@@ -96,11 +96,10 @@ const handleFormSubmit = (e) => {
   // bez name za to z buttonami
   console.log(e.target.colorSelect.value);
 
-  const activeBtn = document.querySelector(".active");
-
-  console.log(activeBtn.value);
+  const activeBtn = document.querySelector(".btn--active");
 
   const productToAddToCart = {
+    name: productName.innerText,
     typeOfRam: activeBtn.value,
     color: e.target.colorSelect.value,
   };

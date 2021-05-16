@@ -9,13 +9,12 @@
   </head>
 
   <body>
-
-    <button class="togglePopupBtn">show pop-up</button>
-    <div class="popup">
+    <button class="btn btn--buyBtn togglePopupBtn">show pop-up</button>
+    <div class="popup  ">
       <div class="popup__content">
-        <button class="togglePopupBtn closeBtn"><img src="./assets/icons/close (-8.svg" alt=""></button>
+        <button class="btn btn--closePopup togglePopupBtn "><img src="./assets/icons/close (-8.svg" alt=""></button>
 
-        <div class="popup__wrapper1">
+        <div class="popup__wrapper popup__wrapper--first">
           <div class="slider">
             <button class="slider__arrow slider__arrow--left">
               <img src="./assets/icons/chevron-right-4.svg" alt="">
@@ -24,39 +23,38 @@
               <img src="/assets/icons/chevron-right-4.svg" alt="">
             </button>
             <div class="slider__content">
-           
-              <img class="sliderImg" src="./assets/images/xbox.png" alt="">
-              <img class="sliderImg" src="./assets/images/pol_il_Playstation-1.png" alt="">
-              <img class="sliderImg" src="./assets//images/NoPath — kopia (2).png" alt="">
-             
+              <img class="slider__img" src="./assets/images/xbox.png" alt="">
+              <img class="slider__img" src="./assets/images/pol_il_Playstation-1.png" alt="">
+              <img class="slider__img" src="./assets//images/NoPath — kopia (2).png" alt="">
             </div>
           </div>
 
         </div>
-        <div class="popup__wrapper2">
+        <div class="popup__wrapper popup__wrapper--second">
           <form class="popup__form">
-            <h1 class="productName productName"></h1>
-            <h2 class="productPrice"></h2>
-            <div class="popup__sizesSection">
-              <label class="popup__sizesLabel" for="colorSelect">rozmiar:</label>
-              <input type="button" name="Ram 32 GB" class="btn sizeBtn active"/>
-              <input type="button" name="Ram 64 GB" class="btn sizeBtn" />
-              <input type="button" name="Ram 128 GB" class="btn sizeBtn" />
+            <h1 class="popup__title popup__title--name"></h1>
+            <h2 class="popup__title popup__title--price"></h2>
+            <!-- tutaj -->
+            <div class="popup__sizesSection">                          
+              <label for="btn--sizeBtn">rozmiar:</label>
+              <input type="button" name="Ram 32 GB" class="btn btn--sizeBtn btn--active"/>
+              <input type="button" name="Ram 64 GB" class="btn btn--sizeBtn" />
+              <input type="button" name="Ram 128 GB" class="btn btn--sizeBtn" />
             </div>
             <div class="popup__colorSection">
-              <label class=" " for="colorSelect">wariant:</label>
+              <label  for="colorSelect">wariant:</label>
               <select class="colorSelect" name="colorSelect" id="">
                 <option  name="colorVariant1" value=""></option>
                 <option  name="colorVariant2" value=""></option>
                 <option name="colorVariant3" value=""></option>
               </select>
             </div>
-            <div class="popup__productInfoWrapper">
-              <div class="popup__productInfoWraperContainer popup__productInfoWraperContainer--left">
+            <div class="popup__productInfoSection">
+              <div class="popup__productInfoSectionWrapper popup__productInfoSectionWrapper--left">
                 <img  src="./assets/icons/ok.svg" alt="">
                 <span class="status" name="status"></span>
               </div>
-              <div class="popup__productInfoWraperContainer popup__productInfoWraperContainer--right">
+              <div class="popup__productInfoSectionWrapper popup__productInfoSectionWrapper--right">
               <img   src=  "./assets/icons/delivery-time-tool.svg"alt="">
                 <div class="status">
                   Możemy wysłać już dzisiaj!<br />
@@ -66,11 +64,11 @@
             </div>
             <div class="popup__buySection">
               <div class="amountOrderWrapper">
-                <button class="amountBtn">+</button>
+                <button class="btn btn--amountBtn">+</button>
                 <div class="amountCounter">1</div>
-                <button class="amountBtn">-</button>
+                <button class="btn btn--amountBtn">-</button>
               </div>
-              <button class="buyBtn" type="submit">Dodaj do koszka</button>
+              <button class="btn btn--buyBtn" type="submit">Dodaj do koszka</button>
             </div>
           </form>
         </div>

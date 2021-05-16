@@ -1,37 +1,23 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
-(() => {
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
   \*****************/
+/***/ (() => {
+
 const toggleBtns = document.querySelectorAll(".togglePopupBtn");
-const sizesButtons = document.querySelectorAll(".sizeBtn");
+const sizesButtons = document.querySelectorAll(".btn--sizeBtn");
 const colorSelectOptions = document.querySelectorAll("option");
-const productPrice = document.querySelector(".productPrice");
+const productPrice = document.querySelector(".popup__title--price");
 const popup = document.querySelector(".popup");
 const popupForm = document.querySelector(".popup__form");
 const status = document.querySelector(".status");
 const slider = document.querySelector(".slider__content");
 const sliderArrowLeft = document.querySelector(".slider__arrow");
 const sliderArrowRight = document.querySelector(".slider__arrow--right");
-const productName = document.querySelectorAll(".productName");
+const productName = document.querySelector(".popup__title--name");
 let data;
 let arrayOfSizes;
 let cart = [];
@@ -52,7 +38,7 @@ const getData = () => {
 };
 
 const setData = (data) => {
-  productName.forEach((name) => (name.innerText = data.product.name));
+  productName.innerText = data.product.name;
   sizesButtons.forEach((sizeBtn, index) => {
     arrayOfSizes = Object.values(data.sizes.items);
 
@@ -92,9 +78,9 @@ const changeRamOption = (typeOfRam) => {
 
       sizesButtons.forEach((button) => {
         if (button.name === typeOfRam) {
-          button.classList.add("active");
+          button.classList.add("btn--active");
         } else {
-          button.classList.remove("active");
+          button.classList.remove("btn--active");
         }
       });
     }
@@ -119,11 +105,10 @@ const handleFormSubmit = (e) => {
   // bez name za to z buttonami
   console.log(e.target.colorSelect.value);
 
-  const activeBtn = document.querySelector(".active");
-
-  console.log(activeBtn.value);
+  const activeBtn = document.querySelector(".btn--active");
 
   const productToAddToCart = {
+    name: productName.innerText,
     typeOfRam: activeBtn.value,
     color: e.target.colorSelect.value,
   };
@@ -147,19 +132,29 @@ sliderArrowLeft.addEventListener("click", onNextClick);
 sliderArrowRight.addEventListener("click", onPreviousClick);
 popupForm.addEventListener("submit", handleFormSubmit);
 
-})();
 
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
+/***/ }),
+
+/***/ "./styles/index.scss":
 /*!***************************!*\
   !*** ./styles/index.scss ***!
   \***************************/
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
+/***/ (() => {
 
-})();
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleParseError: Module parse failed: Unexpected character '�' (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)\n    at handleParseError (C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\webpack\\lib\\NormalModule.js:891:19)\n    at C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\webpack\\lib\\NormalModule.js:992:5\n    at processResult (C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\webpack\\lib\\NormalModule.js:718:11)\n    at C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\webpack\\lib\\NormalModule.js:778:5\n    at C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\loader-runner\\lib\\LoaderRunner.js:406:3\n    at iterateNormalLoaders (C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\loader-runner\\lib\\LoaderRunner.js:232:10)\n    at Array.<anonymous> (C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\loader-runner\\lib\\LoaderRunner.js:223:4)\n    at runCallbacks (C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:27:15)\n    at C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:200:4\n    at C:\\Users\\Piotrek\\Desktop\\zad\\node_modules\\graceful-fs\\graceful-fs.js:123:16");
 
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	__webpack_modules__["./main.js"]();
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./styles/index.scss"]();
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=bundle.js.map
