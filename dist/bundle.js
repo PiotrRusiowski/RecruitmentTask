@@ -43,7 +43,7 @@ const togglePopup = () => {
 };
 toggleBtns.forEach((btn) => btn.addEventListener("click", togglePopup));
 
-const isLocalStorageSupported = window.localStorage; //
+const isLocalStorageSupported = window.localStorage;
 
 const getData = () => {
   fetch("./xbox.json")
@@ -123,7 +123,6 @@ try {
 
 const handleFormSubmit = (e) => {
   e.preventDefault();
-  // bez name za to z buttonami
 
   const activeBtn = document.querySelector(".btn--active");
 
