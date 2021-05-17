@@ -1,3 +1,9 @@
+.showPopup {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 .popup {
     position: fixed;
     top: 0;
@@ -9,10 +15,10 @@
     align-items: center;
     justify-content: center;
     padding: 0px 20px;
-    opacity: 0;
-    visibility: hidden;
-    // opacity: 1;
-    // visibility: visible;
+    // opacity: 0;
+    // visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: 0.3s;
 
     &__content {
@@ -78,11 +84,24 @@
     }
 }
 
-.showPopup {
-    opacity: 1;
-    visibility: visible;
+
+
+.amountOrderWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+    align-items: center;
+    width: 49%;
+    height: 50px;
+    @include border;
+    font-size: 14px;
 }
 
+
+
+.productStatus {
+    margin-left: 11px;
+}
 
 
 

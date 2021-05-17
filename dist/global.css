@@ -18,50 +18,9 @@ button {
   border: none; }
 
 label {
-  width: 100%; }
-
-.productName {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 4px; }
-
-.colorSelect {
-  font-size: 12px;
-  height: 35px;
-  padding: 0px 13px;
-  background-position-x: 10px;
-  border: 1px solid #C3C7C8;
-  border-radius: 5px;
-  border-radius: 15px;
-  -webkit-appearance: none;
-  background-position-x: 244px; }
-
-.infoIcon {
-  width: 15px;
-  height: 11px; }
-
-.amountOrderWrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 1px;
-  align-items: center;
-  width: 49%;
-  height: 50px;
-  border: 1px solid #C3C7C8;
-  border-radius: 5px;
-  font-size: 14px; }
-
-label {
+  width: 100%;
   font-size: 13px;
   margin-bottom: 7px; }
-
-.status {
-  margin-left: 11px; }
-
-.testDiv {
-  width: 100px;
-  height: 100px;
-  background-color: black; }
 
 .btn {
   border: 1px solid #C3C7C8;
@@ -158,6 +117,10 @@ label {
     margin-left: 18px;
     width: 306px; } }
 
+.showPopup {
+  opacity: 1;
+  visibility: visible; }
+
 .popup {
   position: fixed;
   top: 0;
@@ -169,8 +132,8 @@ label {
   align-items: center;
   justify-content: center;
   padding: 0px 20px;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   transition: 0.3s; }
   .popup__content {
     position: relative;
@@ -211,9 +174,19 @@ label {
     display: flex;
     justify-content: space-between; }
 
-.showPopup {
-  opacity: 1;
-  visibility: visible; }
+.amountOrderWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px;
+  align-items: center;
+  width: 49%;
+  height: 50px;
+  border: 1px solid #C3C7C8;
+  border-radius: 5px;
+  font-size: 14px; }
+
+.productStatus {
+  margin-left: 11px; }
 
 @media (min-width: 426px) {
   .amountOrderWrapper {
@@ -250,6 +223,29 @@ label {
     margin-bottom: 20px; }
   .popup__colorSection {
     margin-bottom: 16px; } }
+
+.colorSelectWrapper {
+  position: relative; }
+
+.colorSelect {
+  width: 100%;
+  font-size: 12px;
+  height: 35px;
+  padding: 0px 13px;
+  border: 1px solid #C3C7C8;
+  border-radius: 5px;
+  border-radius: 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
+  outline: none; }
+  .colorSelect__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: 13px;
+    width: 12px;
+    height: 8px; }
 
 
 /*# sourceMappingURL=global.css.map*/

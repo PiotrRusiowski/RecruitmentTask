@@ -1,0 +1,82 @@
+.btn {
+  border: 1px solid #C3C7C8;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.btn--buyBtn {
+  height: 50px;
+  background-color: #0090F6;
+  border-color: #0090F6;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  width: 49%;
+}
+
+.btn--amountBtn {
+  height: 100%;
+  padding: 12px;
+  border-radius: 0px;
+  border: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btn--amountBtn:hover {
+  background-color: rgba(195, 199, 200, 0.4);
+}
+
+.btn--sizeBtn {
+  width: 99px;
+  height: 35px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btn--sizeBtn:hover {
+  border: solid 2px #0090F6;
+}
+
+.btn--closePopup {
+  position: absolute;
+  z-index: 20;
+  right: 10px;
+  top: 10px;
+  height: 15px;
+  width: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+}
+
+@media (min-width: 426px) {
+  .btn--sizeBtn {
+    width: 99px;
+    height: 35px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+  }
+  .btn--buyBtn {
+    width: 218px;
+    margin-left: 10px;
+  }
+  .btn--active {
+    border: 2px solid #0090F6 !important;
+  }
+  .btn--closePopup {
+    top: 24px;
+    right: 20px;
+  }
+}
+/*# sourceMappingURL=buttons.css.map */

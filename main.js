@@ -4,7 +4,7 @@ const colorSelectOptions = document.querySelectorAll("option");
 const productPrice = document.querySelector(".popup__title--price");
 const popup = document.querySelector(".popup");
 const popupForm = document.querySelector(".popup__form");
-const status = document.querySelector(".status");
+const status = document.querySelector(".productStatus");
 const slider = document.querySelector(".slider__content");
 const sliderArrowLeft = document.querySelector(".slider__arrow");
 const sliderArrowRight = document.querySelector(".slider__arrow--right");
@@ -39,16 +39,13 @@ const setData = (data) => {
 
     sizeBtn.addEventListener("click", () => changeRamOption(sizeBtn.value));
     productPrice.innerText = `${arrayOfSizes[0].price} zł`;
-    console.log("array", arrayOfSizes);
 
     colorSelectOptions.forEach((option, index) => {
       const arrayOfVariants = Object.values(data.multiversions[0].items);
-      console.log(arrayOfVariants);
 
       const arrayOfColors = arrayOfVariants.map((variant, index) =>
         Object.values(variant.values)
       );
-      console.log(arrayOfColors);
 
       const formattedColors = arrayOfColors.map((color, index) => {
         const newObj = { ...color[0] };
@@ -94,7 +91,6 @@ try {
 const handleFormSubmit = (e) => {
   e.preventDefault();
   // bez name za to z buttonami
-  console.log(e.target.colorSelect.value);
 
   const activeBtn = document.querySelector(".btn--active");
 

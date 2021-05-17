@@ -1,0 +1,29 @@
+.colorSelectWrapper {
+    position: relative;
+
+}
+
+.colorSelect {
+    width: 100%;
+    font-size: 12px;
+    height: 35px;
+    padding: 0px 13px;
+    @include border;
+    border-radius: 15px;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        right: 13px;
+        width: 12px;
+        height: 8px;
+    }
+
+
+
+
+}
