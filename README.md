@@ -1,8 +1,9 @@
-# React Music Shop
+# IAI popup
 
 ## Overview:
 
-A simple dynamic popup witch form and
+A simple dynamic popup.
+live version: https://iai-popup-zadanie-rekrutacyjne.netlify.app
 
 ## Main Tech stack:
 
