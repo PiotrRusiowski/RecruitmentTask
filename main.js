@@ -66,7 +66,6 @@ const changeRamOption = (typeOfRam) => {
       productPrice.innerText = `${item.price} zł`;
       status.innerText = item.status;
 
-      console.log(item);
       if (item.status === "Produkt dostępny") {
         statusIcon.src = "./assets/icons/ok.svg";
         statusIcon.alt = "aproved";
