@@ -32,6 +32,8 @@ const slider = document.querySelector(".slider__content");
 const sliderArrowLeft = document.querySelector(".slider__arrow");
 const sliderArrowRight = document.querySelector(".slider__arrow--right");
 const productName = document.querySelector(".popup__title--name");
+const statusIcon = document.querySelector(".status__icon");
+
 let data;
 let arrayOfSizes;
 let cart = [];
@@ -86,6 +88,15 @@ const changeRamOption = (typeOfRam) => {
     if (item.name === typeOfRam) {
       productPrice.innerText = `${item.price} zł`;
       status.innerText = item.status;
+
+      console.log(item);
+      if (item.status === "Produkt dostępny") {
+        statusIcon.src = "./assets/icons/ok.svg";
+        statusIcon.alt = "aproved";
+      } else {
+        statusIcon.src = "./assets/icons/close (-1.svg";
+        statusIcon.alt = "x";
+      }
 
       sizesButtons.forEach((button) => {
         if (button.name === typeOfRam) {

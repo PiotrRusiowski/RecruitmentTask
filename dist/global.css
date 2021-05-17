@@ -117,10 +117,6 @@ label {
     margin-left: 18px;
     width: 306px; } }
 
-.showPopup {
-  opacity: 1;
-  visibility: visible; }
-
 .popup {
   position: fixed;
   top: 0;
@@ -132,8 +128,8 @@ label {
   align-items: center;
   justify-content: center;
   padding: 0px 20px;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   transition: 0.3s; }
   .popup__content {
     position: relative;
@@ -173,6 +169,10 @@ label {
   .popup__buySection {
     display: flex;
     justify-content: space-between; }
+
+.showPopup {
+  opacity: 1;
+  visibility: visible; }
 
 .amountOrderWrapper {
   display: flex;
